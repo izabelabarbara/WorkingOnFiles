@@ -3,6 +3,8 @@ import os, time
 
 manager = []
 
+# AUTOLOAD
+
 f = open ("todolist.txt","r")
 manager = eval(f.read())
 f.close()
