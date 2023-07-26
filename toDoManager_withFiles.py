@@ -111,7 +111,12 @@ def menu():
     viewingOptions()
   elif action == 'e':
     editingManager()
-    
+
+# AUTOSAFE:
+  # f = open("todolist.txt", "w")
+  # f.write (str(manager))
+  # f.close()
+
 while True:
   menu()
   f = open("todolist.txt", "w")
