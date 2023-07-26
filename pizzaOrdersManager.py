@@ -55,7 +55,7 @@ Press 2 to view all orders
   if menu == "1":
     addingOrder()
     time.sleep(2)
-  if menu == "2":
+  elif menu == "2":
     prettyPrinting()
     time.sleep(4)
 
