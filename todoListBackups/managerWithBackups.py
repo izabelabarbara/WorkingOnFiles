@@ -2,6 +2,7 @@ from tabulate import tabulate
 import os, time
 
 manager = [["TASK", "DEADLINE", "PRIORITY"]]
+backupNumber = 0
 
 files = os.listdir()
 if "todolist.txt" not in files: 
@@ -101,6 +102,15 @@ def editingManager():
       time.sleep(2)
 
 def menu():
+  global backupNumber
+  backupNumber += 1
+  if "Backup" not in files:
+    os.mkdir("Backup")
+  backupFile = os.path.join("Backup/",f"backup{backupNumber}.txt")
+  g = open(backupFile, "w")
+  g.write(str(manager))
+  g.close()
+
   os.system("clear")
   print ("🌟 Life Organizer 🌟")
   print ()
@@ -117,16 +127,7 @@ def menu():
     
 while True:
   menu()
-  backupNumber = 0 
-  if "Backup" not in files:
-    os.mkdir("Backup")
-  backupFile = os.path.join("Backup/",f"backup{backupNumber}.txt")
-  g = open(backupFile, "w")
-  g.write(str(manager))
-  g.close()
 
   f = open("todolist.txt", "w")
   f.write (str(manager))
   f.close()
-
-  backupNumber += 1
