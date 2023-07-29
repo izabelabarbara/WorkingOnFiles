@@ -11,8 +11,6 @@ if "todolist.txt" not in files:
 
 f = open ("todolist.txt","r+")
 manager = eval(str(f.read()))
-if "[]" in manager:
-  manager.remove("[]")
 f.close()
 
 def quittingOrMenu():
